@@ -1,0 +1,52 @@
+□ CSV ファイルのフォーマット
+
+"keyword","comment","file"[,"file2","file3",...]
+
+□ 凡例
+
+keyword = 発言するテキスト
+comment = config 内でのコメント
+file = 発言する mp3 ファイルのパス
+file2, file3, ... = 発言する mp3 ファイルが複数ある場合
+
+□ 変換例
+
+○ 標準
+
+"ahhh","DQsound","misc/momuri/ahhh08.mp3"
+↓
+--------
+	"ahhh" // DQsound
+	{
+		"file" "misc/momuri/ahhh08.mp3"
+	}
+--------
+
+○ コメント省略
+
+"ainotameni",,"misc/momuri/ainotameni.mp3"
+↓
+--------
+	"ainotameni"
+	{
+		"file" "misc/momuri/ainotameni.mp3"
+	}
+--------
+
+○ 複数
+
+"hi",,"vo/items/wheatley_sapper/wheatley_sapper_pulledout01.mp3","vo/items/wheatley_sapper/wheatley_sapper_pulledout02.mp3","vo/items/wheatley_sapper/wheatley_sapper_pulledout04.mp3","vo/items/wheatley_sapper/wheatley_sapper_pulledout06.mp3","vo/items/wheatley_sapper/wheatley_sapper_pulledout08.mp3","vo/items/wheatley_sapper/wheatley_sapper_pulledout16.mp3","vo/items/wheatley_sapper/wheatley_sapper_pulledout59.mp3"
+↓
+--------
+	"hi"
+	{
+		"file" "vo/items/wheatley_sapper/wheatley_sapper_pulledout01.mp3"
+		"file2" "vo/items/wheatley_sapper/wheatley_sapper_pulledout02.mp3"
+		"file3" "vo/items/wheatley_sapper/wheatley_sapper_pulledout04.mp3"
+		"file4" "vo/items/wheatley_sapper/wheatley_sapper_pulledout06.mp3"
+		"file5" "vo/items/wheatley_sapper/wheatley_sapper_pulledout08.mp3"
+		"file6" "vo/items/wheatley_sapper/wheatley_sapper_pulledout16.mp3"
+		"file7" "vo/items/wheatley_sapper/wheatley_sapper_pulledout59.mp3"
+		"count" "7"
+	}
+--------
